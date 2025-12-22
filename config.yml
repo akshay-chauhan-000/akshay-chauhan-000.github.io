@@ -1,110 +1,114 @@
-baseURL: "https://pascalmichaillat.org/" 
-title: Pascal Michaillat
+baseURL: "https://akshay-chauhan-000.github.io/"
+title: Akshay Chauhan
 theme: PaperMod
+
 pagination:
   pagerSize: 40
 
 taxonomies:
-    tag: tags
+  tag: tags
 
 menu:
-    main:
-        - name: Book
-          url: /18/
-          weight: 1
-        - name: Papers
-          url: /papers/
-          weight: 2
-        - name: Dashboard
-          url: /dashboard/
-          weight: 3
-        - name: Courses
-          url: /courses/
-          weight: 4
-        - name: Design
-          url: /design/
-          weight: 5        
+  main:
+    - name: Papers
+      url: /papers/
+      weight: 1
+    - name: Dashboard
+      url: /dashboard/
+      weight: 2
+    - name: Courses
+      url: /courses/
+      weight: 3
+    - name: Design
+      url: /design/
+      weight: 4
 
 params:
-    description: "This website hosts Pascal Michaillat's book chapters, research papers, real-time business cycle dashboard, course materials, and design templates."
-    author: Pascal Michaillat
-    googleAnalyticsID: "G-97G4MZ4061"
-    images: ["cover.png"]
-    DateFormat: "January 2006"
-    defaultTheme: light
-    hideFooter: true
-    disableThemeToggle: true
-    ShowShareButtons: false
-    ShowReadingTime: false
-    ShowWordCount: false
-    disableSpecial1stPost: true
-    disableAnchoredHeadings: true
-    ShowPostNavLinks: false
-    ShowBreadCrumbs: false
-    disableScrollToTop: true
-    ShowCodeCopyButtons: true
-    ShowToc: false
-    TocOpen: false
-    UseHugoToc: true
-    comments: false
-    math: true
-    profileMode:
-          enabled: true
-          title: Pascal Michaillat
-          subtitle: "I am a professor of economics at the University of California, Santa Cruz. I work primarily on economic slack, especially unemployment: why it exists, why it fluctuates over the business cycle, and how macroeconomic policies should respond to such fluctuations."
-          imageUrl: "/picture.jpeg"
-          imageWidth: 130
-          imageHeight: 130
-          buttons:
-            - name: Book
-              url: /18/
-            - name: Papers
-              url: /papers/
-            - name: Dashboard
-              url: /dashboard/  
-            - name: Courses
-              url: /courses/
-            - name: Design
-              url: /design/
+  description: "Academic website of Akshay Chauhan. Research in computational polymer physics, soft matter, chromatin organization, and biophysics using large-scale simulations and theory."
+  author: Akshay Chauhan
+  googleAnalyticsID: ""   # add later if needed
+  images: ["cover.png"]
+  DateFormat: "January 2006"
 
-    socialIcons:
-        - name: CV
-          url: /cv.pdf
-        - name: Email
-          url: mailto:pascal.michaillat@gmail.com
-        - name: Location
-          url: /location/
-        - name: Office Hours
-          url: /officehours/
-        - name: Google Scholar
-          url: https://scholar.google.com/citations?user=cL23w-4AAAAJ
-        - name: YouTube
-          url: https://www.youtube.com/@pmichaillat
-        - name: GitHub
-          url: https://github.com/pmichaillat
+  defaultTheme: light
+  hideFooter: true
+  disableThemeToggle: true
 
-    assets:
-        disableScrollBarStyle: true
-    cover:
-        hiddenInList: true
-        hiddenInSingle: true
-    label:
-      text: "Pascal Michaillat"
+  ShowShareButtons: false
+  ShowReadingTime: false
+  ShowWordCount: false
+  disableSpecial1stPost: true
+  disableAnchoredHeadings: true
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: false
+  disableScrollToTop: true
+  ShowCodeCopyButtons: true
+  ShowToc: false
+  TocOpen: false
+  UseHugoToc: true
+  comments: false
+  math: true
+
+  profileMode:
+    enabled: true
+    title: Akshay Chauhan
+    subtitle: >
+      PhD candidate in Computational Polymer Physics.
+      I study polymer topology, macromolecular crowding, and chromatin organization
+      using coarse-grained simulations, statistical physics, and data-driven modeling.
+    imageUrl: "/picture.jpeg"
+    imageWidth: 130
+    imageHeight: 130
+    buttons:
+      - name: Papers
+        url: /papers/
+      - name: Dashboard
+        url: /dashboard/
+      - name: Courses
+        url: /courses/
+      - name: Design
+        url: /design/
+
+  socialIcons:
+    - name: CV
+      url: /cv.pdf
+    - name: Email
+      url: mailto:akshay.chauhan@students.iiserpune.ac.in
+    - name: Google Scholar
+      url: https://scholar.google.com/citations?user=Wmk0GMoAAAAJ&hl=en
+    - name: ORCID
+      url: https://orcid.org/0009-0005-7101-6274
+    - name: GitHub
+      url: https://github.com/akshay-chauhan-000
+    - name: Instagram
+      url: https://www.instagram.com/grumpy_molecule/
+
+  assets:
+    disableScrollBarStyle: true
+
+  cover:
+    hiddenInList: true
+    hiddenInSingle: true
+
+  label:
+    text: "Akshay Chauhan"
 
 markup:
-    goldmark:
-        renderer:
-            unsafe: true
-    highlight:
-        guessSyntax: true
-        style: xcode 
-    tableOfContents:
-        endLevel: 2
-        ordered: false
-        startLevel: 2
+  goldmark:
+    renderer:
+      unsafe: true
+
+  highlight:
+    guessSyntax: true
+    style: xcode
+
+  tableOfContents:
+    startLevel: 2
+    endLevel: 2
+    ordered: false
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
-titleCaseStyle: 'none'
+titleCaseStyle: "none"
 enableGitInfo: true
 buildFuture: true
