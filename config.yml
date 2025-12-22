@@ -45,9 +45,9 @@ params:
   images: ["cover.png"]
   DateFormat: "January 2006"
 
-  defaultTheme: light
+  defaultTheme: auto
   hideFooter: true
-  disableThemeToggle: true
+  disableThemeToggle: false
 
   ShowShareButtons: false
   ShowReadingTime: false
@@ -72,8 +72,8 @@ params:
       I study conformations of charged-uncharged polymers under solutions with different ionic strengths, macromolecular crowding; self-assembly of polyelectrolyte
       using coarse-grained simulations, statistical physics, and data-driven modeling.
     imageUrl: "/picture.jpeg"
-    imageWidth: 130
-    imageHeight: 130
+    imageWidth: 150
+    imageHeight: 150
     buttons:
       - name: About
         url: /about/
