@@ -24,7 +24,7 @@ menu:
       weight: 4
 
 params:
-  description: "Academic website of Akshay Chauhan. Research in computational polymer physics, soft matter, chromatin organization, and biophysics using large-scale simulations and theory."
+  description: "Academic website of Akshay Chauhan. Research in computational polymer physics, soft matter, and biophysics using large-scale simulations and theory."
   author: Akshay Chauhan
   googleAnalyticsID: ""   # add later if needed
   images: ["cover.png"]
@@ -54,7 +54,7 @@ params:
     title: Akshay Chauhan
     subtitle: >
       PhD candidate in Computational Polymer Physics.
-      I study polymer topology, macromolecular crowding, and chromatin organization
+      I study conformations of charged-uncharged polymers under solutions with different ionic strengths, macromolecular crowding; self-assembly of polyelectrolyte
       using coarse-grained simulations, statistical physics, and data-driven modeling.
     imageUrl: "/picture.jpeg"
     imageWidth: 130
