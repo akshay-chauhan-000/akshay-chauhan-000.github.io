@@ -10,18 +10,33 @@ taxonomies:
 
 menu:
   main:
-    - name: Papers
-      url: /papers/
+    - name: About
+      url: /about/
       weight: 1
-    - name: Dashboard
-      url: /dashboard/
+
+    - name: Teaching
+      url: /teaching/
       weight: 2
-    - name: Courses
-      url: /courses/
+
+    - name: Projects & Publications
+      url: /projects/
       weight: 3
-    - name: Design
-      url: /design/
+
+    - name: Tutorials
+      url: /tutorials/
       weight: 4
+
+    - name: ML / AI
+      url: /ml-ai/
+      weight: 5
+
+    - name: Blog
+      url: /blog/
+      weight: 6
+
+    - name: Fitness
+      url: /fitness/
+      weight: 7
 
 params:
   description: "Academic website of Akshay Chauhan. Research in computational polymer physics, soft matter, and biophysics using large-scale simulations and theory."
@@ -60,14 +75,20 @@ params:
     imageWidth: 130
     imageHeight: 130
     buttons:
-      - name: Papers
-        url: /papers/
-      - name: Dashboard
-        url: /dashboard/
-      - name: Courses
-        url: /courses/
-      - name: Design
-        url: /design/
+      - name: About
+        url: /about/
+      - name: Teaching
+        url: /teaching/
+      - name: Projects
+        url: /projects/
+      - name: Tutorials
+        url: /tutorials/
+      - name: ML / AI
+        url: /ml-ai/
+      - name: Blog
+        url: /blog/
+      - name: Fitness
+        url: /fitness/
 
   socialIcons:
     - name: CV
@@ -80,7 +101,7 @@ params:
       url: https://orcid.org/0009-0005-7101-6274
     - name: GitHub
       url: https://github.com/akshay-chauhan-000
-    - name: Instagram
+    - name: instagram
       url: https://www.instagram.com/grumpy_molecule/
 
   assets:
