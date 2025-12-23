@@ -33,6 +33,7 @@ Amphiphilic polymers—molecules with both water-loving and water-repelling part
 ---
 
 ### Coupling Effects of Electrostatic Interactions and Salt Concentration Gradient in Polymer Translocation through a Nanopore: A Coarse-Grained Molecular Dynamics Simulations Study
+
 Akash Dhabade, **Akshay Chauhan**, Srabanti Chaudhury
 *ChemPhysChem* **24**, e202200666 (2022)
 
