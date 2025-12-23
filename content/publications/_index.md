@@ -3,8 +3,6 @@ title: "Publications"
 layout: "single"
 ---
 
-## Publications
-
 ### Influence of Crowder Geometry and Flexibility on Polymer Translocation Dynamics  
 **Akshay Chauhan**, Srabanti Chaudhury  
 *Chemistry – An Asian Journal* (2025)
