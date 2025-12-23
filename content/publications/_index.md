@@ -32,6 +32,16 @@ Amphiphilic polymers—molecules with both water-loving and water-repelling part
 
 ---
 
+### Coupling Effects of Electrostatic Interactions and Salt Concentration Gradient in Polymer Translocation through a Nanopore: A Coarse-Grained Molecular Dynamics Simulations Study
+Akash Dhabade, **Akshay Chauhan**, Srabanti Chaudhury
+*ChemPhysChem* **24**, e202200666 (2022)
+
+**Summary:**
+Charged polymers such as DNA often pass through tiny pores in membranes, driven by electric fields and influenced by the surrounding salt environment. Using computer simulations, we study how differences in salt concentration and solution acidity affect how strongly a polymer interacts with a nanopore and how fast it moves through it. We find that salt can both help and hinder translocation by reducing electrostatic repulsion while also generating additional driving forces that may compete with an applied voltage. These results show that polymer transport through nanopores is governed by a delicate balance between electric forces, salt effects, and polymer–pore interactions.
+
+---
+
+
 ## Manuscripts Under Review
 
 ### Effects of Polymer Topology and Crowder Size on Polymer Adsorption at Solid Interfaces  
