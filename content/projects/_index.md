@@ -1,6 +1,60 @@
 ---
-title: "Projects"
+title: "Projects & Publications"
 layout: "single"
 ---
 
-Content coming soon.
+## Publications
+
+### Influence of Crowder Geometry and Flexibility on Polymer Translocation Dynamics  
+**Akshay Chauhan**, Srabanti Chaudhury  
+*Chemistry – An Asian Journal* (2025)
+
+**Summary:**  
+Inside cells, long molecules like DNA often have to pass through tiny pores while surrounded by many other macromolecules. In this work, we use computer simulations to show that not only the amount of crowding, but also the *shape* and *flexibility* of surrounding obstacles strongly affects how easily a polymer can move through a pore. Our results help explain why transport inside biological environments can vary widely depending on local structure and crowding conditions.
+
+---
+
+### Understanding the Anti-Polyelectrolyte Effect in Polyzwitterions Using Coarse-Grained Molecular Dynamics  
+**Akshay Chauhan**, Srabanti Chaudhury  
+*Journal of Physical Chemistry B* **129**, 3253–3262 (2025)
+
+**Summary:**  
+Most charged polymers shrink when salt is added to a solution. Surprisingly, some polymers instead *expand*—a phenomenon known as the anti-polyelectrolyte effect. In this study, we use simplified molecular simulations to understand why this counterintuitive behavior occurs in polyzwitterions. We show how ion–polymer interactions and charge screening work together to drive polymer expansion, providing insight relevant to soft materials and biomedical applications.
+
+---
+
+### Multivalent Salt-Induced Self-Assembly of Amphiphilic Polyelectrolytes of Different Charge Fractions  
+**Akshay Chauhan**, Srabanti Chaudhury  
+*Journal of Physical Chemistry B* **128**, 2037–2044 (2024)
+
+**Summary:**  
+Amphiphilic polymers—molecules with both water-loving and water-repelling parts—can spontaneously organize into structures like micelles. Using computer simulations, we demonstrate how adding multivalent salt ions can dramatically change this self-assembly process. We find that polymers can first cluster together and then redisperse as salt concentration increases, revealing a non-monotonic and highly tunable behavior important for drug delivery and soft-matter design.
+
+---
+
+## Manuscripts Under Review
+
+### Effects of Polymer Topology and Crowder Size on Polymer Adsorption at Solid Interfaces  
+**Akshay Chauhan**, Srabanti Chaudhury  
+*Manuscript submitted*
+
+**Summary:**  
+Polymers can have different shapes—some are open chains, while others form closed loops. In this work, we show that these topological differences strongly influence how polymers interact with surfaces when many surrounding particles are present. Our simulations reveal that looped (ring) polymers are much more prone to flatten and stick to surfaces under crowding, whereas linear polymers behave very differently. These findings have implications for DNA organization near cellular membranes and surfaces.
+
+---
+
+## Research Projects
+
+### Polymer Topology under Crowded Confinement  
+This project explores how the shape and connectivity of polymers—specifically ring versus linear architectures—affect their behavior in crowded and confined environments. Using coarse-grained molecular dynamics simulations, we study how topology controls polymer compaction, surface adsorption, and mobility, with relevance to bacterial chromosomes and confined biopolymers.
+
+---
+
+### Salt-Mediated Self-Assembly and Re-entrant Condensation  
+We investigate how multivalent salts regulate the self-assembly of charged polymers and polyzwitterions. This work focuses on understanding non-monotonic conformational changes, including collapse and re-expansion, driven by ion-mediated interactions. The results provide insight into re-entrant condensation phenomena observed in soft and biological matter.
+
+---
+
+### Polymer Translocation in Crowded and Heterogeneous Environments  
+This project examines how polymers move through nanopores when surrounded by obstacles of different sizes and shapes. We study how crowding, depletion forces, and geometric constraints modify translocation pathways and timescales, with implications for biological transport and nanopore-based technologies.
+
