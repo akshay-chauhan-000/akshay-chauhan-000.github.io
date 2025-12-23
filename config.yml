@@ -17,26 +17,30 @@ menu:
     - name: Teaching
       url: /teaching/
       weight: 2
+    
+    - name: Research Interests
+      url: /research-interests/
+      weight: 3
 
     - name: Projects & Publications
       url: /projects/
-      weight: 3
+      weight: 4
 
     - name: Tutorials
       url: /tutorials/
-      weight: 4
+      weight: 5
 
     - name: ML / AI
       url: /ml-ai/
-      weight: 5
+      weight: 6
 
     - name: Blog
       url: /blog/
-      weight: 6
+      weight: 7
 
     - name: Fitness
       url: /fitness/
-      weight: 7
+      weight: 8
 
 params:
   description: "Academic website of Akshay Chauhan. Research in computational polymer physics, soft matter, and biophysics using large-scale simulations and theory."
@@ -79,6 +83,8 @@ params:
         url: /about/
       - name: Teaching
         url: /teaching/
+      - name: Research Interests
+        url: /research-interests/
       - name: Projects
         url: /projects/
       - name: Tutorials
