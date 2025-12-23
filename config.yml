@@ -22,8 +22,8 @@ menu:
       url: /research-interests/
       weight: 3
 
-    - name: Projects & Publications
-      url: /projects/
+    - name: Publications
+      url: /publications/
       weight: 4
 
     - name: Tutorials
@@ -85,8 +85,8 @@ params:
         url: /teaching/
       - name: Research Interests
         url: /research-interests/
-      - name: Projects
-        url: /projects/
+      - name: Publications
+        url: /publications/
       - name: Tutorials
         url: /tutorials/
       - name: ML / AI

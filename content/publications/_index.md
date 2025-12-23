@@ -1,5 +1,5 @@
 ---
-title: "Projects & Publications"
+title: "Publications"
 layout: "single"
 ---
 
@@ -42,19 +42,4 @@ Amphiphilic polymers—molecules with both water-loving and water-repelling part
 Polymers can have different shapes—some are open chains, while others form closed loops. In this work, we show that these topological differences strongly influence how polymers interact with surfaces when many surrounding particles are present. Our simulations reveal that looped (ring) polymers are much more prone to flatten and stick to surfaces under crowding, whereas linear polymers behave very differently. These findings have implications for DNA organization near cellular membranes and surfaces.
 
 ---
-
-## Research Projects
-
-### Polymer Topology under Crowded Confinement  
-This project explores how the shape and connectivity of polymers—specifically ring versus linear architectures—affect their behavior in crowded and confined environments. Using coarse-grained molecular dynamics simulations, we study how topology controls polymer compaction, surface adsorption, and mobility, with relevance to bacterial chromosomes and confined biopolymers.
-
----
-
-### Salt-Mediated Self-Assembly and Re-entrant Condensation  
-We investigate how multivalent salts regulate the self-assembly of charged polymers and polyzwitterions. This work focuses on understanding non-monotonic conformational changes, including collapse and re-expansion, driven by ion-mediated interactions. The results provide insight into re-entrant condensation phenomena observed in soft and biological matter.
-
----
-
-### Polymer Translocation in Crowded and Heterogeneous Environments  
-This project examines how polymers move through nanopores when surrounded by obstacles of different sizes and shapes. We study how crowding, depletion forces, and geometric constraints modify translocation pathways and timescales, with implications for biological transport and nanopore-based technologies.
 
