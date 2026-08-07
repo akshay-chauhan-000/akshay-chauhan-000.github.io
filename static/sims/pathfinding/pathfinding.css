@@ -1,0 +1,245 @@
+/* ==========================================================================
+   Pathfinding on Energy Landscapes — presentation layer.
+
+   Same design language as particle-life: chrome inherits the PaperMod theme
+   variables; the viewport is a fixed dark instrument window in both themes.
+   ========================================================================== */
+
+.sim-mount {
+  --sim-width: min(1024px, calc(100vw - 2 * var(--gap, 24px)));
+  width: var(--sim-width);
+  margin-left: calc((100% - var(--sim-width)) / 2);
+  margin-block: calc(1.5 * var(--content-gap, 20px));
+}
+
+.sim-noscript {
+  padding: 1rem;
+  border: 1px solid var(--border, #e6e6e6);
+  border-radius: var(--radius, 8px);
+}
+
+.pf {
+  --pf-fg: var(--content, #1e1e1e);
+  --pf-muted: var(--secondary, #6c6c6c);
+  --pf-border: var(--border, #e6e6e6);
+  --pf-field: var(--code-bg, #f5f5f5);
+  --pf-accent: var(--purple, #8e7bd0);
+  --pf-accent-strong: var(--lightpurple, #5e42bc);
+  --pf-ink: #0b0d12;
+  --pf-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  border: 1px solid var(--pf-border);
+  border-radius: var(--radius, 8px);
+  overflow: hidden;
+  background: var(--entry, #fff);
+  color: var(--pf-fg);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* ---------- viewport ---------------------------------------------------- */
+
+.pf-stage {
+  position: relative;
+  background: var(--pf-ink);
+  line-height: 0;
+}
+
+.pf-canvas {
+  display: block;
+  width: 100%;
+  height: var(--sim-canvas-height, 520px);
+  cursor: crosshair;
+}
+
+.pf-hud {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  display: flex;
+  gap: 14px;
+  font-family: var(--pf-mono);
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.42);
+  pointer-events: none;
+  user-select: none;
+}
+
+.pf-hud b {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.pf-hint {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  font-family: var(--pf-mono);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ---------- toolbar ----------------------------------------------------- */
+
+.pf-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 14px;
+  border-top: 1px solid var(--pf-border);
+  border-bottom: 1px solid var(--pf-border);
+  background: var(--pf-field);
+}
+
+.pf-bar button {
+  padding: 0.42em 0.95em;
+  font: inherit;
+  color: var(--pf-fg);
+  background: var(--entry, #fff);
+  border: 1px solid var(--pf-border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.pf-bar button:hover {
+  color: var(--pf-accent-strong);
+  border-color: var(--pf-accent);
+}
+
+.pf-bar button:focus-visible {
+  outline: 2px solid var(--pf-accent);
+  outline-offset: 2px;
+}
+
+.pf-bar .pf-spacer {
+  flex: 1 1 auto;
+}
+
+.pf-status {
+  align-self: center;
+  font-family: var(--pf-mono);
+  font-size: 11px;
+  color: var(--pf-muted);
+}
+
+/* ---------- controls ---------------------------------------------------- */
+
+.pf-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 22px;
+  padding: 16px 14px 18px;
+}
+
+.pf-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px 22px;
+  align-content: start;
+}
+
+.pf-field label {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 2px;
+  color: var(--pf-muted);
+}
+
+.pf-field label span:last-child {
+  font-family: var(--pf-mono);
+  font-size: 11px;
+  color: var(--pf-fg);
+}
+
+.pf-field input[type="range"] {
+  width: 100%;
+  margin: 0;
+  accent-color: var(--pf-accent);
+}
+
+.pf-field input[type="range"]:disabled {
+  opacity: 0.35;
+}
+
+.pf-field select {
+  width: 100%;
+  padding: 0.3em 0.5em;
+  font: inherit;
+  color: var(--pf-fg);
+  background: var(--entry, #fff);
+  border: 1px solid var(--pf-border);
+  border-radius: 6px;
+}
+
+/* ---------- legend ------------------------------------------------------ */
+
+.pf-legend {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  min-width: 150px;
+}
+
+.pf-legend h4 {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: var(--semibold, 500);
+  color: var(--pf-muted);
+}
+
+.pf-ramp {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(90deg,
+    #0b0d12 0%, #24305e 25%, #56628e 50%, #bd8d57 75%, #f6e7b2 100%);
+}
+
+.pf-ramp-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--pf-mono);
+  font-size: 10.5px;
+  color: var(--pf-muted);
+}
+
+.pf-keys {
+  display: grid;
+  gap: 4px;
+  font-family: var(--pf-mono);
+  font-size: 10.5px;
+  color: var(--pf-muted);
+}
+
+.pf-keys span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.pf-keys i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: none;
+}
+
+@media (max-width: 720px) {
+  .pf-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pf-canvas {
+    height: min(var(--sim-canvas-height, 520px), 62vh);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-bar button {
+    transition: none;
+  }
+}

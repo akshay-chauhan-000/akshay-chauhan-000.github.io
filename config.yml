@@ -30,21 +30,17 @@ menu:
       url: /tutorials/
       weight: 5
 
-    - name: ML / AI
-      url: /ml-ai/
-      weight: 6
-
     - name: Simulations
       url: /simulations/
-      weight: 7
+      weight: 6
 
     - name: Blog
       url: /blog/
-      weight: 8
+      weight: 7
 
     - name: Fitness
       url: /fitness/
-      weight: 9
+      weight: 8
 
 params:
   description: "Academic website of Akshay Chauhan. Research in computational polymer physics, soft matter, and biophysics using large-scale simulations and theory."
@@ -93,8 +89,6 @@ params:
         url: /publications/
       - name: Tutorials
         url: /tutorials/
-      - name: ML / AI
-        url: /ml-ai/
       - name: Simulations
         url: /simulations/
       - name: Blog
