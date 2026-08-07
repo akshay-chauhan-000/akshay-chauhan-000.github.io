@@ -1,0 +1,32 @@
+{{- /*
+  Generic mount point for a self-contained browser simulation.
+
+  Usage:  {{< sim "particle-life" >}}
+          {{< sim name="particle-life" height="600" >}}
+
+  Expects the simulation to live at:
+      static/sims/<name>/<name>.css
+      static/sims/<name>/<name>.js
+  and to bootstrap itself by querying [data-sim="<name>"].
+*/ -}}
+
+{{- $name := or (.Get "name") (.Get 0) -}}
+{{- if not $name -}}
+  {{- errorf "sim shortcode: missing simulation name at %s (usage: {{< sim \"particle-life\" >}})" .Position -}}
+{{- end -}}
+
+{{- $css := printf "sims/%s/%s.css" $name $name -}}
+{{- $js := printf "sims/%s/%s.js" $name $name -}}
+
+<link rel="stylesheet" href="{{ $css | relURL }}">
+<div class="sim-mount" data-sim="{{ $name }}"
+  {{- with .Get "height" }} style="--sim-canvas-height: {{ . }}px"{{ end }}>
+  <noscript>
+    <p class="sim-noscript">
+      This is an interactive simulation and needs JavaScript enabled.
+      The full source is readable at <code>static/{{ $js }}</code> in the
+      <a href="https://github.com/akshay-chauhan-000/akshay-chauhan-000.github.io">site repository</a>.
+    </p>
+  </noscript>
+</div>
+<script src="{{ $js | relURL }}" defer></script>
