@@ -1,0 +1,196 @@
+/* ==========================================================================
+   Double-Pendulum Lattice — presentation layer.
+   Same design language as the other sims: themed chrome, dark instrument
+   viewport. Two synchronized panels: the pendulums and the field heatmap.
+   ========================================================================== */
+
+.sim-mount {
+  --sim-width: min(1024px, calc(100vw - 2 * var(--gap, 24px)));
+  width: var(--sim-width);
+  margin-left: calc((100% - var(--sim-width)) / 2);
+  margin-block: calc(1.5 * var(--content-gap, 20px));
+}
+
+.sim-noscript {
+  padding: 1rem;
+  border: 1px solid var(--border, #e6e6e6);
+  border-radius: var(--radius, 8px);
+}
+
+.dp {
+  --dp-fg: var(--content, #1e1e1e);
+  --dp-muted: var(--secondary, #6c6c6c);
+  --dp-border: var(--border, #e6e6e6);
+  --dp-field: var(--code-bg, #f5f5f5);
+  --dp-accent: var(--purple, #8e7bd0);
+  --dp-accent-strong: var(--lightpurple, #5e42bc);
+  --dp-ink: #0b0d12;
+  --dp-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  border: 1px solid var(--dp-border);
+  border-radius: var(--radius, 8px);
+  overflow: hidden;
+  background: var(--entry, #fff);
+  color: var(--dp-fg);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* ---------- viewport: two square panels -------------------------------- */
+
+.dp-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--dp-ink);
+}
+
+.dp-panel {
+  position: relative;
+  line-height: 0;
+}
+
+.dp-canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--dp-ink);
+}
+
+.dp-canvas--lattice {
+  cursor: crosshair;
+}
+
+.dp-caption {
+  position: absolute;
+  left: 10px;
+  bottom: 8px;
+  font-family: var(--dp-mono);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+  user-select: none;
+}
+
+.dp-hud {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  display: flex;
+  gap: 14px;
+  font-family: var(--dp-mono);
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.42);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.dp-hud b {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ---------- toolbar ----------------------------------------------------- */
+
+.dp-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 14px;
+  border-top: 1px solid var(--dp-border);
+  border-bottom: 1px solid var(--dp-border);
+  background: var(--dp-field);
+}
+
+.dp-bar button {
+  padding: 0.42em 0.95em;
+  font: inherit;
+  color: var(--dp-fg);
+  background: var(--entry, #fff);
+  border: 1px solid var(--dp-border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.dp-bar button:hover {
+  color: var(--dp-accent-strong);
+  border-color: var(--dp-accent);
+}
+
+.dp-bar button:focus-visible {
+  outline: 2px solid var(--dp-accent);
+  outline-offset: 2px;
+}
+
+.dp-bar .dp-spacer {
+  flex: 1 1 auto;
+}
+
+.dp-status {
+  align-self: center;
+  font-family: var(--dp-mono);
+  font-size: 11px;
+  color: var(--dp-muted);
+}
+
+/* ---------- controls ---------------------------------------------------- */
+
+.dp-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px 22px;
+  padding: 16px 14px 18px;
+}
+
+.dp-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px 22px;
+  align-content: start;
+}
+
+.dp-field label {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 2px;
+  color: var(--dp-muted);
+}
+
+.dp-field label span:last-child {
+  font-family: var(--dp-mono);
+  font-size: 11px;
+  color: var(--dp-fg);
+}
+
+.dp-field input[type="range"] {
+  width: 100%;
+  margin: 0;
+  accent-color: var(--dp-accent);
+}
+
+.dp-field select {
+  width: 100%;
+  padding: 0.3em 0.5em;
+  font: inherit;
+  color: var(--dp-fg);
+  background: var(--entry, #fff);
+  border: 1px solid var(--dp-border);
+  border-radius: 6px;
+}
+
+@media (max-width: 720px) {
+  .dp-stage {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dp-bar button {
+    transition: none;
+  }
+}
