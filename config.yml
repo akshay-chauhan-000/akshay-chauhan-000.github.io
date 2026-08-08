@@ -71,26 +71,34 @@ params:
   profileMode:
     enabled: true
     title: Akshay Chauhan
+    role: "Computational Polymer Physics · PhD scholar, IISER Pune"
     subtitle: >
-      PhD candidate in Computational Polymer Physics.
-      I study conformations of charged-uncharged polymers under solutions with different ionic strengths, macromolecular crowding; self-assembly of polyelectrolyte
-      using coarse-grained simulations, statistical physics, and data-driven modeling.
+      I study how long-chain molecules fold, assemble, and travel through
+      environments as crowded as the inside of a living cell — using
+      coarse-grained simulations, statistical mechanics, and models kept
+      deliberately minimal. Alongside the PhD, I design and review the
+      physics problems used to train and evaluate frontier AI models.
     imageUrl: "/picture.jpeg"
     imageWidth: 150
     imageHeight: 150
-    buttons:
+    cards:
+      - name: Publications
+        desc: "Peer-reviewed work on polymer topology, electrostatic self-assembly, and transport through nanopores under crowding."
+        url: /publications/
+      - name: Interactive Simulations
+        desc: "Physics you can push around, right in the browser — active-matter particle life and pathfinding on energy landscapes."
+        url: /simulations/
+        badge: New
       - name: About
+        desc: "Background, methods, skills, and what I do beyond the university."
         url: /about/
+    links:
       - name: Teaching
         url: /teaching/
       - name: Research Interests
         url: /research-interests/
-      - name: Publications
-        url: /publications/
       - name: Tutorials
         url: /tutorials/
-      - name: Simulations
-        url: /simulations/
       - name: Blog
         url: /blog/
       - name: Fitness

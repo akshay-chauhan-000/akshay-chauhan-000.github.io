@@ -1,38 +1,74 @@
 <div class="profile">
     {{- with site.Params.profileMode }}
     <div class="profile_inner">
-        {{- if .imageUrl -}}
-        {{- $img := "" }}
-        {{- if not (urls.Parse .imageUrl).IsAbs }}
-            {{- $img = resources.Get .imageUrl }}
-        {{- end }}
-        {{- if $img }}
-            {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
-            {{- if hugo.IsExtended -}}
-                {{- $processableFormats = $processableFormats | append "webp" -}}
-            {{- end -}}
-            {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
-            {{- if and (in $processableFormats $img.MediaType.SubType) (eq $prod true)}}
-                {{- if (not (and (not .imageHeight) (not .imageWidth))) }}
-                    {{- $img = $img.Resize (printf "%dx%d" .imageWidth .imageHeight) }}
-                {{- else if .imageHeight }}
-                    {{- $img = $img.Resize (printf "x%d" .imageHeight) }}
-                {{ else if .imageWidth }}
-                    {{- $img = $img.Resize (printf "%dx" .imageWidth) }}
-                {{ else }}
-                    {{- $img = $img.Resize "150x150" }}
-                {{- end }}
+        <div class="profile-header">
+            {{- if .imageUrl -}}
+            {{- $img := "" }}
+            {{- if not (urls.Parse .imageUrl).IsAbs }}
+                {{- $img = resources.Get .imageUrl }}
             {{- end }}
-            <img draggable="false" src="{{ $img.Permalink }}" alt="{{ .imageTitle | default "profile image" }}" title="{{ .imageTitle }}"
+            {{- if $img }}
+                {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
+                {{- if hugo.IsExtended -}}
+                    {{- $processableFormats = $processableFormats | append "webp" -}}
+                {{- end -}}
+                {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
+                {{- if and (in $processableFormats $img.MediaType.SubType) (eq $prod true)}}
+                    {{- if (not (and (not .imageHeight) (not .imageWidth))) }}
+                        {{- $img = $img.Resize (printf "%dx%d" .imageWidth .imageHeight) }}
+                    {{- else if .imageHeight }}
+                        {{- $img = $img.Resize (printf "x%d" .imageHeight) }}
+                    {{ else if .imageWidth }}
+                        {{- $img = $img.Resize (printf "%dx" .imageWidth) }}
+                    {{ else }}
+                        {{- $img = $img.Resize "150x150" }}
+                    {{- end }}
+                {{- end }}
+                <img draggable="false" src="{{ $img.Permalink }}" alt="{{ .imageTitle | default "profile image" }}" title="{{ .imageTitle }}"
+                    height="{{ .imageHeight | default 150 }}" width="{{ .imageWidth | default 150 }}" />
+            {{- else }}
+            <img draggable="false" src="{{ .imageUrl | absURL }}" alt="{{ .imageTitle | default "profile image" }}" title="{{ .imageTitle }}"
                 height="{{ .imageHeight | default 150 }}" width="{{ .imageWidth | default 150 }}" />
-        {{- else }}
-        <img draggable="false" src="{{ .imageUrl | absURL }}" alt="{{ .imageTitle | default "profile image" }}" title="{{ .imageTitle }}"
-            height="{{ .imageHeight | default 150 }}" width="{{ .imageWidth | default 150 }}" />
+            {{- end }}
+            {{- end }}
+            <div class="profile-id">
+                <h1>{{ .title | default site.Title | markdownify }}</h1>
+                {{- with .role }}
+                <p class="profile-role">{{ . | markdownify }}</p>
+                {{- end }}
+            </div>
+        </div>
+
+        {{- with .subtitle }}
+        <p class="profile-subtitle">{{ . | markdownify }}</p>
         {{- end }}
-        {{- end }}
-        <h1>{{ .title | default site.Title | markdownify }}</h1>
-        <span>{{ .subtitle | markdownify }}</span>
+
         {{- partial "social_icons.html" -}}
+
+        {{- with .cards }}
+        <nav class="profile-cards">
+            {{- range . }}
+            <a class="profile-card" href="{{ trim .url " " }}" rel="noopener">
+                <span class="profile-card-title">
+                    {{ .name }}
+                    {{- with .badge }}<span class="profile-badge">{{ . }}</span>{{- end }}
+                    <span class="profile-card-arrow" aria-hidden="true">&#8594;</span>
+                </span>
+                {{- with .desc }}
+                <span class="profile-card-desc">{{ . }}</span>
+                {{- end }}
+            </a>
+            {{- end }}
+        </nav>
+        {{- end }}
+
+        {{- with .links }}
+        <nav class="profile-links">
+            {{- range . }}
+            <a href="{{ trim .url " " }}" rel="noopener">{{ .name }}</a>
+            {{- end }}
+        </nav>
+        {{- end }}
 
         {{- with .buttons }}
         <div class="buttons">

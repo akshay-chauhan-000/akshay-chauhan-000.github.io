@@ -2,16 +2,12 @@
 
 /* Page layout */
 
-.buttons,
 .main .profile {
     display: flex;
     justify-content: flex-start;
-}
-
-.main .profile {
     align-items: center;
-    max-width: 600px;
-    min-height: calc(100dvh  - (var(--gap) * 2));
+    max-width: 640px;
+    min-height: calc(100dvh - (var(--gap) * 2));
     line-height: var(--line-height);
     font-size: var(--content-size);
 }
@@ -20,26 +16,130 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 14px;
+    width: 100%;
+    padding: calc(2 * var(--gap)) 0;
 }
 
-/* Profile name */
+/* Header: photo beside name and role */
 
-.profile .profile_inner h1 {
-    font-size: 2.75rem;
-    font-weight: var(--title-bold);
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
 }
-
-/* Profile picture */
 
 .profile img {
     border-radius: 50%;
-    border: 1px solid var(--border);    
+    border: 1px solid var(--border);
+    flex: none;
 }
 
-/* Buttons */
+.profile-id h1 {
+    font-size: 2.5rem;
+    font-weight: var(--title-bold);
+    line-height: var(--title-height);
+}
+
+.profile-role {
+    margin-top: 4px;
+    color: var(--secondary);
+    font-size: var(--meta-size);
+}
+
+/* Intro */
+
+.profile-subtitle {
+    color: var(--content);
+    max-width: 60ch;
+}
+
+/* Feature cards */
+
+.profile-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 6px;
+}
+
+.profile-card {
+    display: block;
+    padding: 13px 16px;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color 0.15s ease-in-out;
+}
+
+.profile-card:hover {
+    border-color: var(--purple);
+}
+
+.profile-card-title {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-weight: var(--semibold);
+    color: var(--primary);
+}
+
+.profile-card-arrow {
+    margin-left: auto;
+    color: var(--tertiary);
+    transition: transform 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.profile-card:hover .profile-card-arrow {
+    color: var(--lightpurple);
+    transform: translateX(3px);
+}
+
+.profile-badge {
+    align-self: center;
+    padding: 1px 9px;
+    font-size: 0.6875rem;
+    font-weight: var(--semibold);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--lightpurple);
+    border: 1px solid var(--purple);
+    border-radius: 999px;
+}
+
+.profile-card-desc {
+    display: block;
+    margin-top: 3px;
+    color: var(--secondary);
+    font-size: var(--entry-size);
+}
+
+/* Secondary text links */
+
+.profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin-top: 2px;
+    font-size: var(--meta-size);
+}
+
+.profile-links a {
+    color: var(--secondary);
+    transition: color 0.15s ease-in-out;
+}
+
+.profile-links a:hover {
+    color: var(--lightpurple);
+}
+
+/* Legacy buttons (kept for configs that still use profileMode.buttons) */
 
 .buttons {
+    display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
@@ -59,4 +159,19 @@
 .button:hover {
     background: var(--graypurple);
     border: 1px solid var(--purple);
+}
+
+@media screen and (max-width: 500px) {
+    .profile-id h1 {
+        font-size: 2rem;
+    }
+
+    .profile-header {
+        gap: 16px;
+    }
+
+    .profile img {
+        height: 110px;
+        width: 110px;
+    }
 }
