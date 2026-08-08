@@ -55,110 +55,40 @@
     max-width: 60ch;
 }
 
-/* Feature cards */
+/* Buttons: tiled grid, four per row */
 
-.profile-cards {
-    display: flex;
-    flex-direction: column;
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     width: 100%;
     margin-top: 6px;
-}
-
-.profile-card {
-    display: block;
-    padding: 13px 16px;
-    background: var(--entry);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    transition: border-color 0.15s ease-in-out;
-}
-
-.profile-card:hover {
-    border-color: var(--purple);
-}
-
-.profile-card-title {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    font-weight: var(--semibold);
-    color: var(--primary);
-}
-
-.profile-card-arrow {
-    margin-left: auto;
-    color: var(--tertiary);
-    transition: transform 0.15s ease-in-out, color 0.15s ease-in-out;
-}
-
-.profile-card:hover .profile-card-arrow {
-    color: var(--lightpurple);
-    transform: translateX(3px);
-}
-
-.profile-badge {
-    align-self: center;
-    padding: 1px 9px;
-    font-size: 0.6875rem;
-    font-weight: var(--semibold);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--lightpurple);
-    border: 1px solid var(--purple);
-    border-radius: 999px;
-}
-
-.profile-card-desc {
-    display: block;
-    margin-top: 3px;
-    color: var(--secondary);
-    font-size: var(--entry-size);
-}
-
-/* Secondary text links */
-
-.profile-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 18px;
-    margin-top: 2px;
-    font-size: var(--meta-size);
-}
-
-.profile-links a {
-    color: var(--secondary);
-    transition: color 0.15s ease-in-out;
-}
-
-.profile-links a:hover {
-    color: var(--lightpurple);
-}
-
-/* Legacy buttons (kept for configs that still use profileMode.buttons) */
-
-.buttons {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
 }
 
 .button {
     background: var(--entry);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    margin: 6px 12px 6px 0px;
-    padding: 10px;
+    padding: 10px 4px;
+    font-size: var(--entry-size);
+    text-align: center;
+    white-space: nowrap;
     transition: all 0.15s ease-in-out;
 }
 
 .button-inner {
-    padding: 0 8px;
+    padding: 0 4px;
 }
 
 .button:hover {
     background: var(--graypurple);
     border: 1px solid var(--purple);
+}
+
+@media screen and (max-width: 680px) {
+    .buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media screen and (max-width: 500px) {

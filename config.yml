@@ -77,22 +77,17 @@ params:
     imageUrl: "/picture.jpeg"
     imageWidth: 150
     imageHeight: 150
-    cards:
-      - name: Publications
-        desc: "Peer-reviewed work on polymer topology, electrostatic self-assembly, and transport through nanopores under crowding."
-        url: /publications/
-      - name: Interactive Simulations
-        desc: "Physics you can push around, right in the browser — active-matter particle life and pathfinding on energy landscapes."
-        url: /simulations/
-        badge: New
+    buttons:
       - name: About
-        desc: "Background, methods, skills, and what I do beyond the university."
         url: /about/
-    links:
-      - name: Teaching
-        url: /teaching/
       - name: Research Interests
         url: /research-interests/
+      - name: Publications
+        url: /publications/
+      - name: Simulations
+        url: /simulations/
+      - name: Teaching
+        url: /teaching/
       - name: Blog
         url: /blog/
       - name: Fitness
