@@ -273,8 +273,8 @@
 
   var SLIDERS = [
     { key: 'n', label: 'Lattice size n', min: 4, max: 32, step: 1, fmt: function (v) { return v + ' x ' + v; } },
-    { key: 'K1', label: 'Coupling K1 (upper)', min: 0, max: 5, step: 0.05, fmt: function (v) { return v.toFixed(2); } },
-    { key: 'K2', label: 'Coupling K2 (lower)', min: 0, max: 5, step: 0.05, fmt: function (v) { return v.toFixed(2); } },
+    { key: 'K1', label: 'Coupling K1 (upper)', min: -5, max: 5, step: 0.05, fmt: function (v) { return v.toFixed(2); } },
+    { key: 'K2', label: 'Coupling K2 (lower)', min: -5, max: 5, step: 0.05, fmt: function (v) { return v.toFixed(2); } },
     { key: 'g', label: 'Gravity g', min: 0, max: 20, step: 0.1, fmt: function (v) { return v.toFixed(1); } },
     { key: 'gamma', label: 'Damping', min: 0, max: 1, step: 0.01, fmt: function (v) { return v.toFixed(2); } },
     { key: 'dt', label: 'Time step', min: 0.002, max: 0.02, step: 0.001, fmt: function (v) { return v.toFixed(3); } },
@@ -328,7 +328,7 @@
     if (!latCtx || !mapCtx) return;
 
     var conf = {
-      n: 16, K1: 1.2, K2: 0.6, g: 9.8, gamma: 0.04,
+      n: 16, K1: 2.5, K2: 1.2, g: 9.8, gamma: 0.05,
       dt: 0.005, spf: 4, field: 'th1', seed: 20260809
     };
 
@@ -648,8 +648,8 @@
         if (isFinite(v)) conf[target] = clamp(v, lo, hi);
       };
       num('n', 'n', 4, 32);
-      num('k1', 'K1', 0, 5);
-      num('k2', 'K2', 0, 5);
+      num('k1', 'K1', -5, 5);
+      num('k2', 'K2', -5, 5);
       num('g', 'g', 0, 20);
       num('gm', 'gamma', 0, 1);
       num('dt', 'dt', 0.002, 0.02);
@@ -686,6 +686,9 @@
     readHash();
     lattice = new Lattice(conf.n, conf.seed);
     applyParams();
+    // Boot from fully random phases: near-hanging noise just damps to rest,
+    // which looks like "no interaction". Reset still gives the quiet lattice.
+    lattice.randomize(conf.seed);
     rebuildBuffers();
     syncControls();
 

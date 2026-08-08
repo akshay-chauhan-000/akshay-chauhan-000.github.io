@@ -57,13 +57,28 @@ $$
 $$
 </div>
 
-— torsional springs that pull corresponding joints of adjacent sites into
-alignment, exactly the coupling of the XY and Kuramoto models. Because the
-torques are applied through the inertia matrix rather than added to the
+— torsional springs acting on the corresponding joints of adjacent sites,
+exactly the coupling of the XY and Kuramoto models. Because the torques
+are applied through the inertia matrix rather than added to the
 accelerations by hand, the undamped lattice is genuinely Hamiltonian: the
 sum of site energies plus the bond potential
 $K\sum (1 - \cos\delta\theta)$ is a conserved quantity, which is also how
 the implementation is tested.
+
+Two things about this coupling are worth being precise about. First, **it
+acts on angles, not positions**: the spacing between lattice sites is
+purely visual, the pendulums never collide, and no swing "reaches across"
+the gap — what travels from site to site is angular disagreement, not
+anything mechanical moving through the space between them. (A
+distance-dependent alternative — real springs connecting neighbouring bob
+tips, or pendulums sharing an elastic support the way Huygens' clocks and
+tabletop metronomes synchronize — would be a different, heavier model;
+this one is the clean angular limit.) Second, **the sign of $K$ chooses
+attraction or repulsion in phase**. $K > 0$ is aligning — ferromagnetic in
+magnet language — and pulls neighbours toward the same angle. $K < 0$ is
+anti-aligning: each pendulum prefers to point opposite to its neighbours,
+and since a square lattice can satisfy that perfectly, the system orders
+into a checkerboard of alternating phases. Both signs are on the sliders.
 
 The HUD tracks the Kuramoto order parameter for each joint,
 
@@ -97,6 +112,11 @@ phases are incoherent.
 - **Gravity off.** With $g = 0$ the pendulums become free rotors and the
   model is essentially a two-layer XY dynamics; phase textures wind and
   anneal without a preferred direction to hang toward.
+- **Repulsive coupling.** Drag $K_1$ negative with $g = 0$ and some
+  damping, then *Randomize*: instead of aligning, neighbours anti-align
+  and the phase heatmap orders into a checkerboard — the antiferromagnet
+  to the positive-$K$ ferromagnet. The *neighbour sync* field turns
+  uniformly dark: perfect local disagreement is its own kind of order.
 - **Size matters.** Slide $n$ up mid-run. The pattern survives the
   resampling, but the balance shifts: the same kick that dominated an
   $8 \times 8$ lattice is a local ripple in a $32 \times 32$ one.
