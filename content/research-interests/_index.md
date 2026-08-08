@@ -45,14 +45,8 @@ Methodologically, my work relies on **numerical simulations**, particularly coar
 
 Beyond traditional academic problems, I am deeply interested in **modeling as a general framework for understanding complex systems**, particularly where stochasticity and emergent behavior play a central role.
 
-### Probabilistic Modeling and Stochastic Processes  
-I enjoy developing **probabilistic models** to describe diffusion, random walks, first-passage processes, and noise-driven dynamics. These tools form a conceptual bridge between biophysics, statistical mechanics, and data-driven modeling approaches commonly used in machine learning.
-
 ### Cellular Automata and Emergent Computation  
 I am fascinated by **cellular automata**, including Conway’s *Game of Life*, as minimal models of emergence, pattern formation, and self-organization. These systems provide intuition for how complex global behavior can arise from simple local rules—ideas that resonate strongly with modern ML systems and agent-based modeling.
-
-### Quantitative and Financial Modeling  
-I also have an interest in **quantitative and financial modeling**, particularly from a stochastic and time-series perspective. Concepts such as random processes, fluctuations, and risk modeling appeal to me as extensions of the same mathematical frameworks used in physics, applied to economic and financial systems.
 
 ---
 

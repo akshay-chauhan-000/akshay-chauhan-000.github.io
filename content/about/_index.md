@@ -3,17 +3,29 @@ title: "About"
 layout: "single"
 ---
 
-I am a **final-year PhD scholar in Computational Polymer Physics**, working at the intersection of soft matter physics, biophysics, and statistical mechanics. My research focuses on understanding how long-chain molecules such as polymers and biopolymers behave in complex, crowded environments that resemble conditions inside living cells.
+I am a **final-year PhD scholar in computational polymer physics** at IISER Pune, working with Prof. Srabanti Chaudhury. My research sits at the intersection of soft matter physics, biophysics, and statistical mechanics, and starts from one question: how do long-chain molecules behave in environments as dense and messy as the inside of a living cell?
 
-Inside cells, macromolecules like DNA, RNA, and proteins exist in a dense and heterogeneous background of other macromolecules. This crowding fundamentally alters how polymers fold, move, self-assemble, and interact with interfaces. My work uses **coarse-grained molecular dynamics simulations** to investigate how intrinsic polymer properties—such as topology (linear versus ring polymers), charge distribution, and flexibility—interact with environmental factors including macromolecular crowding, multivalent salts, and confinement.
+Inside cells, DNA, RNA, and proteins never exist in isolation — they fold, move, and assemble in a background crowded with other macromolecules. My work uses **coarse-grained molecular dynamics simulations** to understand how intrinsic polymer properties interact with that environment. Three threads run through it:
 
-A central theme of my research is the role of **polymer topology**. Ring polymers, which lack free ends, exhibit qualitatively different conformational and dynamical behavior compared to linear chains under identical conditions. Through simulations, I study how these topological differences influence polymer compaction, adsorption near surfaces, and anomalous transport. These investigations are motivated by biological systems such as bacterial chromosomes, plasmids, and chromatin organization.
+**Topology.** Ring polymers have no free ends, and that single constraint changes almost everything about how they compact, adsorb onto surfaces, and move under crowding. My recent work shows that ring and linear polymers respond in qualitatively different ways to crowded interfaces — behavior relevant to bacterial chromosomes, plasmids, and chromatin.
 
-Another major direction of my work concerns **salt-mediated self-assembly** in charged and amphiphilic polymers. I examine how multivalent ions regulate polymer aggregation, collapse, and re-expansion, including phenomena such as re-entrant condensation and the anti-polyelectrolyte effect. These studies are relevant to soft functional materials, polyelectrolyte systems, and biologically inspired assemblies.
+**Electrostatics and self-assembly.** Charged and amphiphilic polymers respond to salt in ways that are anything but monotonic: multivalent ions can drive aggregation, collapse, re-expansion, and re-entrant condensation, and polyzwitterions famously *expand* where ordinary polyelectrolytes shrink (the anti-polyelectrolyte effect). I study the mechanisms behind these effects with minimal models that make the physics legible.
 
-More recently, I have explored **polymer transport and translocation** through nanopores and confined geometries under crowded conditions. By varying crowder size, geometry, and flexibility, I investigate how entropic barriers, depletion forces, and crowding anisotropy control transport pathways and timescales, with implications for both biological transport and synthetic nanopore technologies.
+**Transport.** Polymer translocation through nanopores under crowding — how entropic barriers, depletion forces, and the geometry and flexibility of surrounding obstacles set transport pathways and timescales, with implications from biological transport to nanopore sequencing technologies.
 
-Methodologically, I work primarily with **coarse-grained bead–spring polymer models**, implemented using large-scale molecular dynamics simulations. My research is grounded in statistical physics and numerical modeling, and I am increasingly interested in incorporating **machine learning and data-driven approaches** to analyze simulation data and construct reduced models of complex polymer systems.
+Methodologically, everything is grounded in **bead–spring models, statistical physics, and large-scale MD**, with a growing interest in machine learning as a tool for extracting reduced models from simulation data.
+
+---
+
+## AI and Industry Work
+
+Alongside my PhD, I work with **Mercor** as a physical-sciences domain expert, designing and reviewing research-grade computational chemistry problems used to train and evaluate frontier AI models. The work is a kind of adversarial peer review: constructing problems whose solutions cannot be recalled or pattern-matched, then auditing them for scientific correctness, solvability, and information leakage. It has sharpened how I think about what models actually understand about physics — and about what makes a scientific problem genuinely hard rather than merely obscure.
+
+---
+
+## Interactive Simulations
+
+This site hosts a growing collection of [interactive simulations](/simulations/) — dependency-free, browser-based physics you can push around: active-matter particle life, graph search on energy landscapes, with more on the way. They are the playful end of the same interests that drive my research: minimal models, emergent behavior, and algorithms you can watch think.
 
 ---
 
@@ -21,8 +33,9 @@ Methodologically, I work primarily with **coarse-grained bead–spring polymer m
 
 ### Programming and Data Analysis
 - Python, MATLAB, Julia (scientific computing, data analysis, visualization)
-- C / C++/ FORTRAN (simulation and numerical methods)
-- Basic Bash scripting for automation and workflows
+- C / C++ / FORTRAN (simulation and numerical methods)
+- JavaScript (browser-based interactive physics simulations)
+- Bash scripting for automation and workflows
 
 ### Molecular Simulation Software
 - **LAMMPS** (coarse-grained molecular dynamics)
@@ -30,23 +43,22 @@ Methodologically, I work primarily with **coarse-grained bead–spring polymer m
 - **GROMACS** (familiarity with atomistic and coarse-grained workflows)
 
 ### Machine Learning / AI
-- Python-based libraries including TensorFlow, keras, PyTorch, NumPy, SciPy, Pandas
-- Introductory experience with machine learning tools for data analysis and pattern extraction from simulation outputs
+- PyTorch, TensorFlow/Keras, NumPy, SciPy, Pandas
+- ML-assisted analysis and pattern extraction from simulation data
+- Design and evaluation of scientific reasoning tasks for large language models
 
 ### Documentation and Writing
 - **LaTeX** (manuscripts, theses, presentations)
-- Basic **HTML** for web-based documentation and academic websites
+- Static-site tooling (Hugo, Markdown, HTML) for academic web publishing
 
 ### High-Performance Computing
-- Experience with **HPC clusters**, job scheduling, and large-scale simulations
-- Parallel workflows and data management for long MD runs
+- **HPC clusters**: job scheduling, parallel workflows, and data management for long MD runs
 
 ### Version Control
-- **Git** and **GitHub** for code versioning, collaboration, and reproducible research
+- **Git** and **GitHub** for versioning, collaboration, and reproducible research
 
 ---
 
 ## Outside Academia
 
-Outside research, I enjoy **pencil drawing and shading**, which I find complements scientific thinking by encouraging observation and patience. I am an avid reader with interests spanning fiction, non-fiction, and scientific writing. I also maintain a regular **gym and fitness routine**, which helps me stay disciplined and focused alongside academic work.
-
+Away from the keyboard I draw — **pencil sketching and shading**, which trains the same muscles as science: observation and patience. I read widely across fiction, non-fiction, and scientific writing, and I keep a regular **gym routine**, which does more for research productivity than most productivity advice.

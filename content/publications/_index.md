@@ -3,6 +3,15 @@ title: "Publications"
 layout: "single"
 ---
 
+### Effects of Polymer Topology and Crowder Size on Polymer Adsorption at Solid Interfaces  
+**Akshay Chauhan**, Srabanti Chaudhury  
+*ChemPhysChem* **27**, e202500790 (2026) · [doi:10.1002/cphc.202500790](https://doi.org/10.1002/cphc.202500790)
+
+**Summary:**  
+Polymers can have different shapes—some are open chains, while others form closed loops. In this work, we show that these topological differences strongly influence how polymers interact with surfaces when many surrounding particles are present. Our simulations reveal that looped (ring) polymers are much more prone to flatten and stick to surfaces under crowding, whereas linear polymers behave very differently. These findings have implications for DNA organization near cellular membranes and surfaces.
+
+---
+
 ### Influence of Crowder Geometry and Flexibility on Polymer Translocation Dynamics  
 **Akshay Chauhan**, Srabanti Chaudhury  
 *Chemistry – An Asian Journal* (2025)
@@ -41,12 +50,8 @@ Charged polymers such as DNA often pass through tiny pores in membranes, driven 
 
 ## Manuscripts Under Review
 
-### Effects of Polymer Topology and Crowder Size on Polymer Adsorption at Solid Interfaces  
+### Ring Polymer Dynamics in Crowded Confinement with Fluctuating Wall
 **Akshay Chauhan**, Srabanti Chaudhury  
 *Manuscript submitted*
 
-**Summary:**  
-Polymers can have different shapes—some are open chains, while others form closed loops. In this work, we show that these topological differences strongly influence how polymers interact with surfaces when many surrounding particles are present. Our simulations reveal that looped (ring) polymers are much more prone to flatten and stick to surfaces under crowding, whereas linear polymers behave very differently. These findings have implications for DNA organization near cellular membranes and surfaces.
-
 ---
-
