@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../../static/sims/coulomb-fluids/coulomb-fluids.css">
+<style>body{margin:0;padding:24px 40px;font-family:system-ui,sans-serif;background:#fff} main{max-width:720px;margin:0 auto}</style>
+<script>window.__errs=[];window.addEventListener('error',function(e){window.__errs.push(e.message+' @'+e.lineno+':'+e.colno);var l=document.getElementById('errlog');if(l)l.textContent=window.__errs.join('\n');});</script>
+</head><body><main><h3>harness</h3>
+<div class="sim-mount" data-sim="coulomb-fluids"></div>
+<pre id="errlog">no-errors</pre><pre id="obs"></pre>
+</main>
+<script src="../../static/sims/coulomb-fluids/coulomb-fluids.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){var m=/warm=(\d+)/.exec(location.hash);if(!m)return;var K=+m[1];
+var r=document.querySelector('.sim-mount');var s=r._coulombFluids.getSystem();
+for(var k=0;k<K;k++){s.collect=(k%6===5);s.step();if(s.collect)s.measure();}s.collect=false;});
+</script><script>setInterval(function(){var r=document.querySelector('.sim-mount');if(!r||!r._coulombFluids)return;var s=r._coulombFluids.getSystem();document.getElementById('obs').textContent='t='+s.t.toFixed(2)+' n='+s.n+' T='+(s.obs.T||0).toFixed(3)+' eC='+(s.obs.eC||0).toFixed(3)+' geom='+s.geom+' L='+s.L.toFixed(1);},250);</script>
+</body></html>
